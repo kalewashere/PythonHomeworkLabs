@@ -64,13 +64,13 @@ if currency_name not in rates:
     currency_name = input('Enter the currency code to exchange: ')  # needed to re-enter currency_name with input.
     # otherwise, code would break saying the incorrect input could not be identified
 
-how_many_euros = float(input('Enter how many Euros to convert: ')) # also forgot to global the how_many_euros
+how_many_euros = float(input('Enter how many Euros to convert: '))  # also forgot to global the how_many_euros
 # variable - did not break code but had a yellow line beneath it due to it being local to if statement.
 # there's a few different way to get variables and info from dictionary, but this way seems/looks most concise
 exchange_rate = rates[currency_name]
 print(f'The exchange rate is for {currency_name} is {exchange_rate}')
 exchanged_currency_amount = how_many_euros * exchange_rate
-print(f'The equivalent in {currency_name} currency is {exchanged_currency_amount: .3f}')  # TODO print neat message
+print(f'The equivalent in {currency_name} currency is {exchanged_currency_amount: .3f}')  # print neat message
 # for user - the ': .3f' cuts off 3 decimal points for ease of viewing
 
 # print(exchange_rate)
@@ -78,4 +78,5 @@ print(f'The equivalent in {currency_name} currency is {exchanged_currency_amount
 # jpy_exchange_rate = rates[jpy_currency_name]
 # examples above how to read from dictionary
 
-# print(jpy_exchange_rate) we want to make this easier for coding - it would be alot fo code otherwise
+# print(jpy_exchange_rate) we want to make this easier for coding - it would be alot fo code otherwise <-- lines
+# 76-79 examples of how to solve, solution above is better/neater to use

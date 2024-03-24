@@ -40,7 +40,7 @@ while True:  # set up loop, then return and review condition - how to stop later
 print('After adding all the names, your complete guest list is: ') # this line is for ease of reading, i really enjoy
 # making output easy to read
 # use enumerate() to create a numbered list - insert variable that you want numbered
-for number, guest_name in enumerate(guest_list):  # tuple unpacking -
+for number, guest_name in enumerate(guest_list):  # tuple unpacking - ask about this
     print(f'{number + 1}: {guest_name}') # add 1 to number to get rid of 0 value (python counts 0)
 # part 4
 
