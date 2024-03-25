@@ -15,19 +15,22 @@ If the day is below average, include a down arrow ↓"""
 day_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 weekday_sales = {}  # fill dictionary with keys and input added by user FOUND IT <---video 7/8
 up_arrow = chr(8593)
-down_arrow = chr(8595)
+down_arrow = chr(8595) # I am not entirely sure if these need to be set up here, but I like to keep all parts of code
+# set globally near each other for my own sanity
 
 for day in day_of_week:
     sales = float(input(f'Please enter total sales for {day}: '))  # even though I know it is going to be a whole
     # number, I needed to add float
 
-    # print(day) <---- working through trying to figure this one out, this only prints day of week, which i want to
+    # print(day) <---- working through trying to figure this one out, this only prints day of week, which I want to
     # be the keys
-    weekday_sales[day] = sales
+    weekday_sales[day] = sales # setting this variable here will allow us to enter data from loop into dictionary
 print()
-total_sales = sum(weekday_sales.values())  # math to calculate total T-shirt sales in the week
+total_sales = sum(weekday_sales.values())  # math to calculate total T-shirt sales in the week - sum() adds values in
+# dictionary, entered by user (.values)
 
-days = len(weekday_sales)
+days = len(weekday_sales) # this will give us the number of days in weekday_sales (7) to help with calculating
+# average for format string (f'string) printed below
 average = total_sales / days  # calculation for average sales for the week
 for day, sales in weekday_sales.items(): # loop to see if sales are above or below averages, if so - up arrow,
     # if not down
