@@ -29,11 +29,12 @@ total_sales = sum(weekday_sales.values())  # math to calculate total T-shirt sal
 
 days = len(weekday_sales)
 average = total_sales / days  # calculation for average sales for the week
-for day, sales in weekday_sales.items():
+for day, sales in weekday_sales.items(): # loop to see if sales are above or below averages, if so - up arrow,
+    # if not down
     if sales >= average:
         print(f'On {day},{sales: .0f} T-Shirts were sold. {up_arrow}')  # GOT IT
     elif sales < average:
-        print(f'On {day},{sales: .0f} T-Shirts were sold. {down_arrow}')
+        print(f'On {day},{sales: .0f} T-Shirts were sold. {down_arrow}') # character codes from Lab page
 
 print()
 
