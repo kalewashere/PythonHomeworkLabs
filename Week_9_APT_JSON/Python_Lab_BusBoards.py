@@ -86,4 +86,4 @@ for bus_info in nb_departures and sb_departures:
 # TODO - turn this partial Lab in and ask for help 4/7/24 - I have been working on this all week and I cannot figure
 #  it out. Thinking maybe a function would help best - turning in what I have and will got to office hours or ask a
 #  friend to help me with it. Unable to get the bus lists to separate to north / south, unable to get northbound and
-#  southbound messages to print, unable to use multiple urls - super lost and brain dead at this point
+#  southbound messages to print, unable to use multiple urls - super lost and brain dead at this point. need to revisit
