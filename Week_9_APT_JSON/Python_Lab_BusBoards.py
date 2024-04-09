@@ -54,7 +54,7 @@ for bus_info in nb_departures and sb_departures:
 # print('Route Time Bus Description')
 #
 #        if direction == 'NB':
-#            print('Northbound busses arriving outside of Minneapolis College Campus are scheduled as follows: ')
+#            print('Northbound buses arriving outside of Minneapolis College Campus are scheduled as follows: ')
 
 
 # this is a list of dictionaries

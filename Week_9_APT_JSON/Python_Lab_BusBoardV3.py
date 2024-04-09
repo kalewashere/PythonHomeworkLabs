@@ -31,7 +31,7 @@ for sb_bus_info in sb_departures:
     sb_direction = sb_bus_info['direction_text']
     sb_description = sb_bus_info['description']
     print(f'{sb_route:<10} {sb_time:<11} {sb_description}')
-# todo guessing a while loop would be best here - brb - nope def not
+# todo guessing a while loop would be best here - brb - nope def cant get that to work either
 # def northbound(direction):
 #   if direction in nb_departures and sb_departures == 'NB':
 #        print('Northbound')
