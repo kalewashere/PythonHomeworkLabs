@@ -12,7 +12,7 @@ nb_departures = nb_response['departures']
 sb_departures = sb_response['departures']
 
 print('Northbound buses buses arriving outside of Minneapolis College are scheduled as follows: ')
-
+print('')
 print(f'Route      Time        Bus Description')
 
 for nb_bus_info in nb_departures:
@@ -23,7 +23,7 @@ for nb_bus_info in nb_departures:
     print(f'{nb_route:<10} {nb_time:<11} {nb_description}')
 print('')
 print('Southbound buses arriving outside of Minneapolis College are scheduled as follows: ')
-
+print('')
 print(f'Route      Time        Bus Description')
 for sb_bus_info in sb_departures:
     sb_route = sb_bus_info['route_id']
