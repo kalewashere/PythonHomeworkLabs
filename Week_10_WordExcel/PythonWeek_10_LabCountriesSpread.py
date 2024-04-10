@@ -21,12 +21,12 @@ from openpyxl import Workbook  # import library to work with Excel documents in 
 
 # this imports just the module we need
 
-# todo - make request to API to get list of country info
+#  make request to API to get list of country info
 countries_url = 'https://country-list-1150.azurewebsites.net/api/country'  # this is a list of dictionaries, with nested
 # dictionaries. usually loop over list, access data by keys
 country_list_response = requests.get(countries_url).json()
 # descriptive variable names are important
-# todo create workbook - before loop~
+#  create workbook - before loop~
 
 # to have data written to it as loop runs, and we access the country and capital
 # looking things up is expected and normal as programmer
