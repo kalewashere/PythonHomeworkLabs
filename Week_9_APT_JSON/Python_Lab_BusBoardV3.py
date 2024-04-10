@@ -3,7 +3,8 @@ if those will help in this process - ok so couldnt get a function to work - need
 import requests
 
 url1 = 'https://svc.metrotransit.org/NexTrip/17940?format=json'
-url2 = 'http://svc.metrotransit.org/NexTrip/17928?format=json' # when i tried to list urls together it caused issues - not sure if i am setting that up correctly or if that only works for image urls
+url2 = 'http://svc.metrotransit.org/NexTrip/17928?format=json' # when i tried to list urls together it caused issues
+# - not sure if i am setting that up correctly or if that only works for image urls
 
 nb_response = requests.get(url1).json() # variables might be a little to simple for urls
 sb_response = requests.get(url2).json()
@@ -11,11 +12,13 @@ sb_response = requests.get(url2).json()
 nb_departures = nb_response['departures']
 sb_departures = sb_response['departures'] # accessing list of dictionaries to gather data needed for variables
 
-print('Northbound buses buses arriving outside of Minneapolis College are scheduled as follows: ') # placed these before loop so they would show up first
+print('Northbound buses buses arriving outside of Minneapolis College are scheduled as follows: ') # placed these
+# before loop so they would show up first
 print('')
 print(f'Route      Time        Bus Description')
 
-for nb_bus_info in nb_departures: # this code is bulky - I tried to do a function so i wouldn't have to write code twice, but i need review on functions because i do not think i grasp it fully
+for nb_bus_info in nb_departures: # this code is bulky - I tried to do a function so i wouldn't have to write code
+    # twice, but i need review on functions because i do not think i grasp it fully
     nb_route = nb_bus_info['route_id']
     nb_time = nb_bus_info['departure_text']
     nb_direction = nb_bus_info['direction_text']
