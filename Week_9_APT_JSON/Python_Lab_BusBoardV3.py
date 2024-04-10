@@ -23,7 +23,7 @@ for nb_bus_info in nb_departures: # this code is bulky - I tried to do a functio
     nb_time = nb_bus_info['departure_text']
     nb_direction = nb_bus_info['direction_text']
     nb_description = nb_bus_info['description']
-    print(f'{nb_route:<10} {nb_time:<11} {nb_description}') # used ':<10' etc for spacing
+    print(f'{nb_route:<10} {nb_time:<11} {nb_description}') # used ':<10' etc. for spacing
 print('') # print blank lines to separate, printed globally to print outside of loop
 print('Southbound buses arriving outside of Minneapolis College are scheduled as follows: ')
 print('')
