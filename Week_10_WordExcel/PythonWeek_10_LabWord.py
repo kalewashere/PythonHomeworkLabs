@@ -27,7 +27,8 @@ title and the text."""
 # so I am going to try that instead
 import requests  # must do both
 from openpyxl import Workbook  # import library to work with Excel documents in Python -
-import docx # all import and from modules need to be at the beginning - I was getting yellow error bars if it was
+import docx  # all import and from modules need to be at the beginning - I was getting yellow error bars if it was
+
 # after any other code
 
 # this imports just the module we need
