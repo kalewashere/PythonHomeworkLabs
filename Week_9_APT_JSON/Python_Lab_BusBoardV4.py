@@ -26,13 +26,15 @@ def print_bus_table(bus_url, bus_direction):
     response = requests.get(bus_url).json()
     departures = response['departures']
     print(f'{bus_direction} buses arriving outside of Minneapolis College are scheduled as follows: ')
-    print(f'Route      Time        Bus Description')  # placed outside of loop, so it will only print once while the
+    print(f"{'Route':<10} {'Time':<11} {'Bus Description'}")  # placed outside of loop, so it will only print once
+    # while the
     # function is called.
     for bus_info in departures:
         route = bus_info['route_id']
         time = bus_info['departure_text']
         description = bus_info['description']
-        print(f'{route:<10} {time:<11} {description}')  # format strings and string spacing editors to make the tables
+        print(f'{route:<10} {time:<11} {description}')  # format strings and string spacing editors
+        # to make the tables
         # more visually appealing
 
 
