@@ -8,7 +8,7 @@
 # and just talking shop with them, AND with the edits Clara provided to my turned in lab, I know feel much more
 # confident in my understanding of defining a function, format strings and spacing, as well as organization and where
 # I can place different parts of the code.
-# cheers!!
+# cheers!
 import requests
 
 
