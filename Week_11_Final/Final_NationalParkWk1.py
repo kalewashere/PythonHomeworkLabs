@@ -62,6 +62,7 @@ for one_park in random_park_choice:
     park_weather = one_park_details_response['weather_overview'] # got it - key was entered incorrectly
     hours_of_operation = one_park_details_response['park_operating_hours'] # same here as above - wrong key entered
     individual_website_information = one_park_details_response['contact_info']['url']
+    # below is code for ease of reading in Python, double-checking work
     print(f'{individual_park_name}')
     print(f'{individual_park_description}')
     print(f'{hours_of_operation}')
@@ -73,7 +74,6 @@ for one_park in random_park_choice:
     print(f'{individual_website_information}')
     # test prints to see all data set in variable, I wanted to make sure all the data obtained from APIs were being
     # gathered correctly. Will comment out at another time.
-
     park_word_document.add_paragraph(individual_park_name, 'Heading 1')
     park_word_document.add_paragraph('Description', 'Heading 2')
     park_word_document.add_paragraph(individual_park_description, 'Normal')
