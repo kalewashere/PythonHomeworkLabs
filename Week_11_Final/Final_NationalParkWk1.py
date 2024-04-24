@@ -83,7 +83,7 @@ for one_park in random_park_choice:
     for activity in park_activities:
         park_word_document.add_paragraph(activity, 'List Bullet 2')  # this part tripped me up a bit, but used the
         # example in the Ppt for word and excel (for car in cars:) and figured it out from there
-    # TODO - Image codes will go here
+    # TODO - Image paragraph code will go here
     park_word_document.add_paragraph('Operating Hours', 'Heading 2')
     park_word_document.add_paragraph(hours_of_operation, 'Normal')
     park_word_document.add_paragraph('Contact Information', 'Heading 2')
