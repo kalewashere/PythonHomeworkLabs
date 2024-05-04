@@ -68,7 +68,6 @@ for one_park in random_park_choice:
     park_images = one_park_details_response['nps_park_images']
     hours_of_operation = one_park_details_response['park_operating_hours']  # same here as above - wrong key entered
     individual_website_information = one_park_details_response['contact_info']['url']
-
     # below is code for ease of reading in Python, double-checking word
     print(f'{individual_park_name}')  # if I leave this print it can help me see where the
     # program is at with its process
@@ -108,11 +107,13 @@ for one_park in random_park_choice:
         for index, url in enumerate(nps_images_list):  # switched the enumerate variable multiple times, needed to
             # tell the program where and how many of the image urls to pull.
             # It kept giving me so many images that would save upwards of 100
+            # putting images into nps_images_list solved a lot of issues I was having, pulling images off of park_images
+            # variable was not working
             with open(filename, 'wb') as file:
                 for chunk in image_response.iter_content():
                     file.write(chunk)
         park_word_document.add_picture(filename, width=Inches(4), height=Inches(4))
-        # need to add width and height, images in word document are HUGE
+        # need to add width and height, images in word document are HUGE. 4x4 seems to be best for formatting
         park_word_document.add_paragraph(f'{title}. {credit}', 'Caption')
         # Below is image code practice - did not go well
         # individual_image_urls = images['url']
