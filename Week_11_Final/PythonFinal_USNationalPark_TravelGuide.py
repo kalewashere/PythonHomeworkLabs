@@ -103,7 +103,7 @@ for one_park in random_park_choice:
         # print(filename) # also helped with seeing program progress - it also helped me see if the program was writing
         # the .jpg files correctly. This portion really took me some time to figure out
         if nps_images_list == '':
-            print('No image available')
+            park_word_document.add_paragraph('No image available', 'Caption')
         for index, url in enumerate(nps_images_list):  # switched the enumerate variable multiple times, needed to
             # tell the program where and how many of the image urls to pull.
             # It kept giving me so many images that would save upwards of 100
