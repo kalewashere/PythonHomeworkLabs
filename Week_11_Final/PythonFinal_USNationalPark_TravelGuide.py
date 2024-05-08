@@ -38,7 +38,7 @@ park_word_document.add_paragraph('National Park Travel Guide', 'Title')
 park_list_url = 'https://national-parks-1150.azurewebsites.net/api/list'
 # use descriptive names, using more than one
 # URL
-park_list_response = requests.get(park_list_url).json()
+park_list_response = requests.get(park_list_url).json() # converts so python can read
 #  accessing a list of dictionaries, which we can access by key
 # need random library to pick 5 random parks, we need the park_code
 random_park_choice = random.sample(park_list_response, 5)
@@ -48,7 +48,8 @@ bullet_point = '\u2022'  # this was used to print activities in a list in Pychar
 # looked up chart for character codes, url: https://altcodeunicode.com/alt-codes-bullet-point-symbols/
 for one_park in random_park_choice:
     park_code = one_park['park_code']
-    url_for_one_park_details = 'https://national-parks-1150.azurewebsites.net/api/' + park_code
+    url_for_one_park_details = 'https://national-parks-1150.azurewebsites.net/api/' + park_code # sets URL and adds
+    # park code for individual parks pulled from random library
     # urls are strings, this
     # adds random park_code to end or url so, we can access that data
     # print(url_for_one_park_details)
@@ -81,13 +82,14 @@ for one_park in random_park_choice:
     # print(f'{individual_website_information}')
     # test prints to see all data set in variable, I wanted to make sure all the data obtained from APIs were being
     # gathered correctly. Will comment out at another time.
-    park_word_document.add_paragraph(individual_park_name, 'Heading 1')
+    park_word_document.add_paragraph(individual_park_name, 'Heading 1') # adds paragraph to word doc, with formatting
+    # indicated in second position
     park_word_document.add_paragraph('Description', 'Heading 2')
     park_word_document.add_paragraph(individual_park_description, 'Normal')
     park_word_document.add_paragraph('Weather', 'Heading 2')
     park_word_document.add_paragraph(park_weather, 'Normal')
     park_word_document.add_paragraph('Activities', 'Heading 2')
-    for activity in park_activities:
+    for activity in park_activities: # loop for activities
         park_word_document.add_paragraph(activity, 'List Bullet 2')
         # this part tripped me up a bit, but used the
         # example in the Ppt for word and excel (for car in cars:) and figured it out from there
@@ -98,23 +100,24 @@ for one_park in random_park_choice:
         image_url = image['url']
         nps_images_list = list(park_images)  # this seemed to be an important part for the loop below
         image_response = requests.get(image_url)
-        url_parts = image_url.split('/')
+        url_parts = image_url.split('/') # sets image name to that is provided from images URL
         filename = url_parts.pop()
         # print(filename) # also helped with seeing program progress - it also helped me see if the program was writing
         # the .jpg files correctly. This portion really took me some time to figure out
-        if nps_images_list == '':
+        if nps_images_list == '': # adds paragraph indicated if images list url is empty
             park_word_document.add_paragraph('No image available', 'Caption')
         for index, url in enumerate(nps_images_list):  # switched the enumerate variable multiple times, needed to
             # tell the program where and how many of the image urls to pull.
             # It kept giving me so many images that would save upwards of 100
             # putting images into nps_images_list solved a lot of issues I was having, pulling images off of park_images
             # variable was not working
-            with open(filename, 'wb') as file:
+            with open(filename, 'wb') as file: # downloads images to use in word doc, indicated below
                 for chunk in image_response.iter_content():
                     file.write(chunk)
         park_word_document.add_picture(filename, width=Inches(4), height=Inches(4))
         # need to add width and height, images in word document are HUGE. 4x4 seems to be best for formatting
-        park_word_document.add_paragraph(f'{title}. {credit}', 'Caption')
+        park_word_document.add_paragraph(f'{title}. {credit}', 'Caption') # used format string to include both title
+        # and credit next to each other in the same paragraph
         # Below is image code practice - did not go well
         # individual_image_urls = images['url']
         # while park_images == '':
